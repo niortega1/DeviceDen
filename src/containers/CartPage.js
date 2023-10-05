@@ -1,12 +1,15 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { adjustItemQuantity, removeItemFromCart } from '../slices/cartSlice';
+import CheckoutPage from './CheckoutPage';
 
 const CartPage = () => {
+
     const cartItems = useSelector(state => state.cart.items);
     const totalAmount = useSelector(state => state.cart.totalAmount);
     const products = useSelector(state => state.products);
     const dispatch = useDispatch();
+
 
     const handleAdjustItemQuantity = (productId, quantity) => {
         dispatch(adjustItemQuantity({ productId, quantity }));
@@ -41,7 +44,7 @@ const CartPage = () => {
                     })}
                     </ul>
                     <h2>Total: ${totalAmount.toFixed(2)}</h2>
-                    {/* Add checkout button here later */}
+                    <CheckoutPage />
                 </div>
             )}
         </div>
