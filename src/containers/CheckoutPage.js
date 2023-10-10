@@ -1,9 +1,11 @@
 import React from "react";
 import { loadStripe } from "@stripe/stripe-js";
+import { useSelector } from "react-redux";
 
 const stripePromise = loadStripe('pk_test_51MUDPwJvPCwdTBgx0ip50skvfhXkNB96reiaiXzyQzL7RGjVFgTxS3K41Akt3UOrqLEz7y8IT0wVR9sDF5PdH1B700fGqjU7d7');
 
 const CheckoutPage = () => {
+    const cart = useSelector(state => state.cart.items);
     const handleClick = async () => {
         const stripe = await stripePromise;
 
@@ -12,6 +14,7 @@ const CheckoutPage = () => {
             headers: {
                 'Content-Type': 'application/json'
             },
+            body: JSON.stringify({ cart }),
         });
 
         const session = await response.json();
