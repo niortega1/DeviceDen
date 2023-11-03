@@ -14,7 +14,7 @@ const RecommendedProducts = ({ currentProductId, currentCategory }) => {
 
     return (
         <div className='recommended-products'>
-            <h2>You might also like...</h2>
+            <h2>Products related to this item </h2>
             <ul>
                 {products.map(product => (
                     <Link to={`/product/${product.id}`}>

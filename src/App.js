@@ -14,6 +14,7 @@ import CategoriesPage from './containers/CategoriesPage';
 import ProductDetailPage from './containers/ProductDetailPage';
 import ReviewsPage from './containers/ReviewsPage';
 import CartPage from './containers/CartPage';
+import AboutUsPage from './containers/AboutUsPage';
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
           <Router>
             <Navbar />
             <Routes>
-              <Route path="/" element={<Home />} /> 
+              <Route path="/" element={<Home />} />
+              <Route path="/about-us" element={<AboutUsPage />} />
               <Route path="/mobiles" element={<MobilesPage />} />
               <Route path="/laptops" element={<LaptopsPage />} />
               <Route path="/tablets" element={<TabletsPage />} />

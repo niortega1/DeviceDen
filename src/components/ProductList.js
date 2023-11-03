@@ -3,21 +3,19 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import ProductItem from '../components/ProductItem';
 
-const ProductList = ({ category, searchTerm }) => {
+const ProductList = ({ category, searchTerm, showAll = false }) => {
   // Fetch products from Redux store
   const products = useSelector(state => state.products);
 
-  // Filter products based on the provided category
-  const filteredProducts = products
+  const displayedProducts = showAll ? products : products
       .filter(product => product.category === category)
       .filter(product => product.name.toLowerCase().includes(searchTerm.toLowerCase()));
 
   return (
-    <div>
-      <h1>{category.charAt(0).toUpperCase() + category.slice(1)} Products</h1>
-      <ul>
-        {filteredProducts.map(product => (
-          <li key={product.id}>
+    <div className='product-list-div'>
+      <ul className='product-list-ul'>
+        {displayedProducts.map(product => (
+          <li className='product-list-li' key={product.id}>
             <Link to={`/product/${product.id}`}>
               <ProductItem key={product.id} product={product} />
             </Link>

@@ -53,6 +53,11 @@ function getProductDetails(productId) {
     return cart.find(product => product.id === productId);
 }
 
+// Endpoint to get the list of upcoming events
+app.get('/upcoming-events', (req, res) => {
+    res.json(events);
+});
+
 
 app.post('/create-checkout-session', async (req, res) => {
     const { cart } = req.body;

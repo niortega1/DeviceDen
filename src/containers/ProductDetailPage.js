@@ -7,6 +7,9 @@ import ProductDescription from '../components/ProductDescription';
 import ProductReviews from '../components/ProductReviews';
 import RecommendedProducts from '../components/RecommendedProducts';
 import { addItemToCart } from '../slices/cartSlice';
+import blackFridayImg from '../imgs/black_friday_banner.jpg';
+import LearnMoreAboutUs from './LearnMoreAboutUs';
+
 
 const ProductDetailPage = () => {
     const dispatch = useDispatch();
@@ -19,8 +22,6 @@ const ProductDetailPage = () => {
             name: product.name, 
             price: product.price
         }));
-
-        alert('Added to cart!'); // Notify user that item was added to cart
     }
 
     if (!product) {
@@ -29,17 +30,21 @@ const ProductDetailPage = () => {
 
     return (
         <div className='product-detail'>
+            <div className="black-friday-banner" >
+                <img src={blackFridayImg} alt="black-friday" />
+            </div>
             <div className='product-main'>
                 <ProductImages images={[product.image]} />
                 <div className='product-content-wrapper'>
                     <ProductInfo product={product} />
+                    <button className="add-to-cart-btn" onClick={handleAddToCart}>Add to Cart</button>
                     <ProductDescription description={product.description} />
                     <ProductReviews reviews={product.reviews} />
                 </div>
-                {/* Add to Cart Button */}
-                <button onClick={handleAddToCart}>Add to Cart</button>
             </div>
             <RecommendedProducts currentProductId={product.id} currentCategory={product.category} />
+            <LearnMoreAboutUs />
+
         </div>
     );
 }

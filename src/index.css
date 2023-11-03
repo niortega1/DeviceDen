@@ -1,13 +1,35 @@
+:root {
+  /* Fonts */
+  --main-font-family: 'Montserrat', sans-serif;
+  --secondary-font-family: 'Open-Sans', sans-serif;
+
+  /* Colors */
+  --color-1: #353535;
+  --color-2: #3C6E71;
+  --color-3: #FFFFFF;
+  --color-4: #D9D9D9;
+  --color-5: #284B63;
+
+  /* Margins and Paddings */
+  --main-padding: 20px;
+  --medium-padding: 10px;
+  --large-padding: 300px;
+  
+  /* Dimensions */
+  --category-image-width: 100%;
+  --categoty-image-height: 170px;
+}
+
 *{
   box-sizing: border-box;
-font-family: 'Montserrat', sans-serif;
+  font-family: var(--main-font-family);
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Open-Sans','Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, var(--secondary-font-family), 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue';
+    background-color: var(--color-3);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   
@@ -16,6 +38,496 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.about-us-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Container for all person-boxes */
+.person-container {
+  display: flex;
+  flex-wrap: wrap;  /* Allows boxes to wrap to the next row */
+  justify-content: center;  /* Centers boxes horizontally */
+  align-items: center;  /* Centers boxes vertically */
+  gap: 20px;  /* Space between boxes */
+}
+
+.person-box {
+  border: 1px solid #e6e6e6;
+  padding: 15px;  /* Increase padding */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  width: 300px;  /* Increase width */
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.person-img {
+  width: 100%;
+  max-height: 200px;  /* Increase height */
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  border-radius: 1%;
+  object-position: 55% 20%;
+}
+
+/* Increase font sizes */
+.person-name {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.person-title,
+.person-description,
+.person-enjoy,
+.person-fun-fact {
+  font-size: 1.2rem;  /* Increase font size */
+  margin: 10px 0;
+}
+
+.person-img-container {
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-us-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* This will ensure everything in the container is centered */
+}
+
+.black-friday-banner img {
+  max-width: 100%;  /* This ensures the image doesn't overflow the container */
+  max-height: 400px;
+  margin-bottom: 20px;  /* Space between the image and the person boxes */
+}
+
+.nav-bar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-icon-container {
+  position: relative;
+}
+
+.cart-number {
+  position: absolute;
+  top: -5px; /* Adjust as needed */
+  right: -12px; /* Adjust as needed */
+  background-color: red; /* Your choice of background */
+  border-radius: 50%; /* Makes it circular */
+  padding: 2px 6px; /* Adjust as needed */
+  color: white;
+  font-size: 12px; /* Adjust as needed */
+  min-width: 18px;
+  text-align: center;
+}
+
+.double-digit {
+  right: -18px; /* Shifts it more to the left */
+  padding: 2px 4px; /* Adjust padding for two digits */
+}
+
+
+.cart-icon-container img {
+  width: 30px; /* Adjust based on your preference */
+  height: auto;
+}
+
+.cart-icon-container span {
+  position: absolute;
+  top: 0;
+  right: -10px; /* Adjust to position the count over the image */
+  background-color: red;
+  border-radius: 50%;
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.product-detail {
+  padding: 2em 0;
+}
+
+.product-main {
+  display: flex;
+  gap: 2em;
+}
+
+.product-main > .product-content-wrapper {
+  flex: 1;
+  background-color: #f5f5f5;  /* Light background */
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background: linear-gradient(45deg, #FF5733, #FF8D33);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;}
+
+button:hover {
+  background: linear-gradient(45deg, #FF4512, #FF7B12);  /* Darken the gradient on hover */
+}
+
+.black-friday-banner {
+  display: flex;              /* Makes the container a flexbox container */
+  justify-content: center;   /* Horizontally centers the image */
+  align-items: center;       /* Vertically centers the image */
+  height: auto;              /* Set to the natural height of the content */
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.black-friday-banner img {
+  max-width: 100%;   /* Ensures the image doesn't exceed its container's width */
+  height: auto;      /* Maintains the image's aspect ratio */
+}
+
+.learn-more-container {
+  padding: 15px;
+  background-color: var(--color-1);
+  border: 1px solid #e0e0e0;
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.learn-more-container h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--color-4);
+}
+
+.learn-more-container p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: var(--color-3);
+}
+
+.learn-more-btn {
+  background: linear-gradient(45deg, #FF5733, #FF8D33);  /* Gradient background */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+
+}
+
+.learn-more-btn:hover {
+  background: linear-gradient(45deg, #FF4512, #FF7B12);  /* Darken the gradient on hover */
+}
+
+
+/* Enclosing div style */
+.search-bar-div {
+  display: flex;
+  justify-content: center; /* Center the input horizontally */
+  padding: 10px;
+}
+
+/* Input style */
+.search-bar-input {
+  font-size: 16px;                     /* Adjust as needed */
+  padding: 10px 15px;                  /* Vertical and horizontal padding */
+  width: 250px;                        /* Adjust width as needed */
+  border: 1px solid #ddd;              /* Light gray border */
+  border-radius: 5px;                  /* Rounded corners */
+  outline: none;                       /* Remove browser default outline */
+  transition: border-color 0.3s ease; /* Smooth transition for focus effect */
+}
+
+/* Input focus effect */
+.search-bar-input:focus {
+  border-color: #007BFF;  /* Adjust to a color that fits your theme */
+}
+
+
+.product-description {
+  padding: 20px;
+  background-color: var(--color-4);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.description-heading {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.description-text {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.product-reviews {
+  padding: 20px;
+}
+
+.reviews-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.review-item {
+  display: flex;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: var(--color-4);
+  border-radius: 5px;
+}
+
+.review-user, .review-headline {
+  margin-right: 5px;
+}
+
+.review-button {
+  padding: 10px 20px;
+  background-color: var(--color-1);
+  color: var(--color-3);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.review-button:hover {
+  background-color: var(--color-2);
+}
+
+.review-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Aligns items horizontally in the center */
+}
+
+.review-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Aligns items horizontally in the center */
+  gap: 5px;  /* Adds spacing between the name and title */
+}
+
+.review-title {
+  margin-top: 5px;  /* Adjust this for spacing between name and title */
+}
+
+.star-rating-container {
+  margin: 5px 0; /* Adjust as needed for spacing */
+  align-self: center;  /* Centers the star rating horizontally */
+}
+/* General review styling */
+
+.product-reviews,
+.add-review {
+    padding: 20px;
+    font-family: Arial, sans-serif; /* Adjust to your preferred font */
+}
+
+.review-user,
+.review-headline,
+.review-name-input,
+.review-headline-input,
+.review-textarea {
+    font-size: 18px; /* Adjust to your preferred size */
+    margin-bottom: 10px;
+}
+
+.review-button,
+.review-submit-btn {
+    padding: 10px 15px;
+    border: none;
+    background-color: #007BFF; /* You can adjust the color */
+    color: #FFF;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.review-button:hover,
+.review-submit-btn:hover {
+    background-color: #0056b3; /* Adjust for hover state color */
+}
+
+/* List of reviews */
+
+.reviews-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.review-item {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.star-rating-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+
+/* Add Review Component Styles */
+
+/* Centering the stars in the AddReview component */
+
+.rating-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-input {
+    margin-bottom: 20px;
+}
+
+.review-name-input,
+.review-headline-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.review-textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.product-reviews {
+    text-align: center; /* This will center text elements like <h3>, <p> */
+    width: 100%;
+}
+
+.reviews-list {
+    list-style: none; /* This will remove bullet points from the <ul> */
+    padding: 0; /* This will remove any default padding */
+}
+
+.review-item {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically if there's extra space */
+    margin-bottom: 20px; /* Spacing between each review for better readability */
+}
+
+.review-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review-header, .star-rating-container, .review-headline {
+    width: 100%; /* Ensure these elements take up the full width of their parent */
+    text-align: center; /* Center the text within them */
+}
+
+.write-review-btn {
+    display: flex;
+    justify-content: center; /* This will center the button within the .write-review-btn container */
+}
+
+
+
+
+footer {
+  font-family: 'Martel Sans', sans-serif;
+  background-color: #222;
+  color: #f5f5f5;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.quick-links, .legal-links, .services, .contact {
+  flex: 1;
+  padding: 10px 15px;
+}
+
+h4 {
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+a {
+  color: #f5f5f5;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #0099ff;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.add-to-cart-btn {
+  /* styles for add-to-cart button */
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0099ff;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #0077cc;
 }
 
 a, a:visited, a:hover, a:active {
@@ -35,9 +547,9 @@ ul{
   align-items: center;
   margin-right: 0;
   height: 100px;
-  background-color: #fbfbfb;
-  color: white;
-  font-family: 'Open-Sans', sans-serif;
+  background-color: var(--color-1);
+  color: var(--color-2);
+  font-family: var(--secondary-font-family);
   box-shadow: 0 4px 5px -5px rgba(0,0,0,.23);
 }
 
@@ -47,7 +559,7 @@ ul{
   padding: 0 24px;
   font-size: 2.5rem;
   text-decoration: none;
-  color: rgb(26, 26, 26);
+  color: var(--color-3);
   margin: 0 auto;
   text-decoration: none;
 }
@@ -64,7 +576,7 @@ ul{
 }
 
 .nav-links a{
-  color: rgb(26, 26, 26);
+  color: var(--color-3);
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 500;
@@ -75,9 +587,82 @@ ul{
 }
 
 h1 {
-  text-align: center;
+ text-align: center;
  font-size: 2rem;
- margin-top: 20px;
+}
+
+.black-friday {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center;     /* Vertical centering */
+  height: 100%; 
+}
+
+.black-friday img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.page {
+  background-color: var(--color-3);
+  padding: 20px 0;
+}
+
+.mobiles-h1, .product-list-h1 {
+  text-align: center;
+  color: #353535;
+  margin-bottom: 20px;
+}
+
+.product-list-ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0;
+  list-style-type: none;
+}
+
+.product-list-li {
+  flex-basis: calc(25% - 20px); /* 25% for 4 items per row. The 20px is to account for margins. */
+  margin: 10px;
+  box-sizing: border-box; /* This ensures padding and border are included in the item's total width and height */
+  background-color: #FFFFFF;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.product-list-li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0.8;
+}
+
+.product-list-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Styles for hover and products on specified page */
+.product-item-div {
+  margin: 10px;
+}
+
+.product-item-div img {
+  width: auto;       /* set the desired width */
+  height: 150px;      /* set the desired height */
+  object-fit: cover;  /* ensures that the image covers the entire content box */
+  object-position: center; /* ensures that the image is centered */
+  border-radius: 5px; /* optional: rounds the corners for a more polished look */
+}
+
+.product-item-div div {
+  padding: 10px;
+  text-align: center;
+  color: #353535;
 }
 
 .SearchBar {
@@ -98,15 +683,15 @@ h1 {
 .product-main {
   display: flex;
   justify-content: center;
-  align-items: flex-start;  /* Aligns the image and content at the top */
+  align-items: flex-start;  
   width: 100%;
-  gap: 2rem;  /* You can adjust this space between the image and content */
+  gap: 2rem;  
 }
 
 /* This wraps around ProductInfo, ProductDescription, and ProductReviews */
 .product-content-wrapper {
-  flex: 1;  /* Allows it to take up remaining space in the product-main container */
-  max-width: 60%;  /* You can adjust this to control the width of the product content on the right */
+  flex: 1;  
+  max-width: 60%;  
   padding: 1rem;
 }
 
@@ -117,7 +702,7 @@ h1 {
   justify-content: center;
   gap: 1rem;
   width: 100%;
-  margin-top: 2rem;  /* Space between main product details and recommended products */
+  margin-top: 2rem; 
   flex-wrap: wrap;
 }
 
@@ -144,7 +729,7 @@ h1 {
 }
 
 .product-images img {
-  width: 300px; 
+  width: auto; 
   height: 400px;
   object-fit: cover;
   border-radius: 8px;
@@ -155,7 +740,9 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
 .home-content{
@@ -164,35 +751,57 @@ h1 {
   align-items: center;
   height: 600px;
   width: 100%;
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(55,55,255,1) 40%, rgba(0,212,255,1) 100%);
-  color: white;
-  padding: 0 300px;
+  background: var(--color-5);
+  color: var(--color-3);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: linear-gradient(45deg, #FF5733, #FF8D33); 
+  color: var(--color-3); 
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  z-index: 2; 
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: linear-gradient(45deg, #FF4512, #FF7B12);  /* Darken the gradient on hover */
 }
 
 .home-image{
-  width: 50%;
-  margin: 10px 20px;
+  width: 100%;
+  opacity: 0.7;
+  z-index: 1;
 }
 
 .tech-home{
-  max-height: 500px;
+  max-height: 600px;
   width: 100%;
   object-fit: cover;
-  margin: 10px;
-  border-radius: 10px;
 }
 
 .home-text{
-  margin: 10px;
-  width: 50%;
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  z-index: 2; 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0 20px;
-  padding-bottom: 100px;
-  margin-bottom: 100px;
-  font-size: 800;
+}
+
+.categories-container {
+  background-color: #f5f5f5;
+  width: 100%;
 }
 
 .category-list,
@@ -202,7 +811,7 @@ h1 {
 .smarthome-list,
 .accessories-list {
   display: flex;
-  justify-content: space-around; /* You can use space-around to distribute items evenly */
+  justify-content: space-around; 
   align-items: center;
   gap: 10px;
   margin: 10px;
@@ -238,6 +847,35 @@ h1 {
   padding: 10px;
   margin: 10px;
   flex-basis: calc(20% - 20px);
+  transition: transform 0.3s ease;
+  background-color: var(--color-3);
+}
+
+.category-list li:hover,
+.mobiles-list li:hover,
+.laptop-list li:hover,
+.tablet-list li:hover,
+.smarthome-list li:hover,
+.accessories-list li:hover {
+  transform: scale(1.05);
+}
+
+.category-list li:hover img,
+.mobiles-list li:hover img,
+.laptop-list li:hover img,
+.tablet-list li:hover img,
+.smarthome-list li:hover img,
+.accessories-list li:hover img {
+  opacity: 0.8;
+}
+
+.category-list li:hover span,
+.mobiles-list li:hover span,
+.laptop-list li:hover span,
+.tablet-list li:hover span,
+.smarthome-list li:hover span,
+.accessories-list li:hover span {
+  color: var(--color-2);
 }
 
 .category-list li img,
@@ -250,10 +888,11 @@ h1 {
   height: 170px;
   object-fit: contain;
   border-radius: 10px;
+  transition: opacity 0.3s ease;
 }
 
 .category-list li span,
-.mobiles-list li span,
+.mobiles-list li span,t
 .laptop-list li span,
 .tablet-list li span,
 .smarthome-list li span,
@@ -261,4 +900,5 @@ h1 {
   margin-top: 10px;
   font-size: 16px;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
